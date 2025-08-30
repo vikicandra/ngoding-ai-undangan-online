@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation Showcase - Template Undangan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .hero-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 700;
+            line-height: 0.8;
+            letter-spacing: -0.02em;
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        .parallax-section {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .section-1 {
+            background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                             url('https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+        }
+        
+        .section-2 {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                             url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+        }
+        
+        .section-3 {
+            background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), 
+                             url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80');
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .template-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .template-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .floating-nav {
+            backdrop-filter: blur(20px);
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s ease;
+        }
+        
+        .floating-nav.scrolled {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Floating Navigation -->
+    <nav class="floating-nav fixed top-0 left-0 right-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">W</span>
+                </div>
+                <span class="font-semibold text-gray-800">Wedding Templates</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-rose-500 transition-colors">Beranda</a>
+                <a href="templates.html" class="text-gray-700 hover:text-rose-500 transition-colors">Template</a>
+                <a href="parallax.html" class="text-gray-700 hover:text-rose-500 transition-colors">Parallax Design</a>
+                <a href="#" class="text-rose-500 font-medium">Wedding Showcase</a>
+            </div>
+            
+            <button class="bg-rose-500 text-white px-6 py-2 rounded-full hover:bg-rose-600 transition-colors">
+                Mulai Sekarang
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center relative">
+        <div class="text-center text-white z-10">
+            <h1 class="hero-text mb-6">
+                WEDDING<br>
+                <span class="text-rose-300">DREAMS</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto leading-relaxed">
+                Ciptakan undangan pernikahan yang tak terlupakan dengan desain yang memukau
+            </p>
+            <button class="bg-white text-gray-800 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors text-lg">
+                Jelajahi Koleksi
+            </button>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white rounded-full mt-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Elegant Collection -->
+    <section class="parallax-section section-1 min-h-screen flex items-center py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h2 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6" style="font-family: 'Playfair Display', serif;">
+                        Koleksi<br>
+                        <span class="text-rose-500">Elegan</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Desain klasik dengan sentuhan modern yang mencerminkan keanggunan dan kemewahan hari bahagia Anda.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-rose-500 mb-2">50+</div>
+                            <div class="text-gray-600">Template Elegan</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-rose-500 mb-2">100%</div>
+                            <div class="text-gray-600">Customizable</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in grid grid-cols-2 gap-4">
+                    <div class="template-card bg-white/80 rounded-2xl p-4 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Elegant Wedding Template" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Golden Elegance</h3>
+                        <p class="text-sm text-gray-600">Desain mewah dengan aksen emas</p>
+                    </div>
+                    <div class="template-card bg-white/80 rounded-2xl p-4 shadow-lg mt-8">
+                        <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Classic Wedding Template" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <h3 class="font-semibold text-gray-800 mb-2">Classic Romance</h3>
+                        <p class="text-sm text-gray-600">Romantis dengan bunga vintage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Modern Collection -->
+    <section class="parallax-section section-2 min-h-screen flex items-center py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-6" style="font-family: 'Playfair Display', serif;">
+                    Koleksi<br>
+                    <span class="text-rose-300">Modern</span>
+                </h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                    Desain kontemporer yang fresh dan minimalis untuk pasangan yang menyukai gaya hidup modern.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 fade-in">
+                <div class="template-card bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Modern Wedding Template" class="w-full h-56 object-cover rounded-xl mb-4">
+                    <h3 class="font-semibold text-white mb-2">Minimalist Chic</h3>
+                    <p class="text-sm text-gray-300 mb-4">Clean dan sophisticated</p>
+                    <button class="w-full bg-rose-500 text-white py-2 rounded-lg hover:bg-rose-600 transition-colors">
+                        Lihat Detail
+                    </button>
+                </div>
+                
+                <div class="template-card bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Contemporary Wedding Template" class="w-full h-56 object-cover rounded-xl mb-4">
+                    <h3 class="font-semibold text-white mb-2">Contemporary Art</h3>
+                    <p class="text-sm text-gray-300 mb-4">Artistic dan unik</p>
+                    <button class="w-full bg-rose-500 text-white py-2 rounded-lg hover:bg-rose-600 transition-colors">
+                        Lihat Detail
+                    </button>
+                </div>
+                
+                <div class="template-card bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Geometric Wedding Template" class="w-full h-56 object-cover rounded-xl mb-4">
+                    <h3 class="font-semibold text-white mb-2">Geometric Love</h3>
+                    <p class="text-sm text-gray-300 mb-4">Bold dan modern</p>
+                    <button class="w-full bg-rose-500 text-white py-2 rounded-lg hover:bg-rose-600 transition-colors">
+                        Lihat Detail
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Custom Services -->
+    <section class="parallax-section section-3 min-h-screen flex items-center py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <div class="bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-xl">
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" style="font-family: 'Playfair Display', serif;">
+                            Layanan<br>
+                            <span class="text-rose-500">Custom</span>
+                        </h2>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Tidak menemukan desain yang sesuai? Tim desainer profesional kami siap membuat undangan khusus sesuai visi dan tema pernikahan Anda.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-rose-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Konsultasi desain gratis</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-rose-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">Revisi unlimited</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-6 h-6 bg-rose-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-700">File siap cetak & digital</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-rose-500 text-white py-4 rounded-full font-semibold hover:bg-rose-600 transition-colors text-lg">
+                            Mulai Konsultasi
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Custom Wedding Design Process" class="w-full rounded-3xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+                    Siap Membuat Undangan Impian?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Hubungi tim kami dan wujudkan undangan pernikahan yang sempurna
+                </p>
+                <button class="bg-rose-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-rose-600 transition-colors text-lg">
+                    Hubungi Kami
+                </button>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Wedding Templates. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Floating nav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.floating-nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

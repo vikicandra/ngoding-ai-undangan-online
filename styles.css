@@ -1,8 +1,9 @@
 /* Custom Tailwind Configuration */
 :root {
-  --color-primary: #10b981;
-  --color-secondary: #059669;
-  --color-accent: #f59e0b;
+  --color-primary: #ffc0cb; /* Light pink */
+  --color-secondary: #ff69b4; /* Hot pink */
+  --color-accent: #b22222; /* Firebrick red */
+  --color-pink-light: #f8e1e1; /* Very light pink */
 }
 
 /* Custom styles for slider */
@@ -77,4 +78,79 @@ html {
 
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Added parallax-specific styles */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  will-change: transform;
+  z-index: -1;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 2rem;
+  box-shadow: 0 20px 40px rgba(255, 192, 203, 0.3);
+}
+
+.floating-card {
+  animation: float 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(5deg);
+  }
+}
+
+.invitation-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.invitation-card:hover {
+  transform: translateY(-15px) rotateY(5deg) scale(1.05);
+  box-shadow: 0 25px 50px rgba(255, 105, 180, 0.4);
+}
+
+/* Added romantic text effects for parallax page */
+.romantic-text {
+  background: linear-gradient(45deg, #ff69b4, #ffc0cb, #ff1493);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
